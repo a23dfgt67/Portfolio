@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Great Journey - Sohail's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4D4D;
+            --secondary: #F9CB28;
+            --dark: #1E1E1E;
+            --light: #F5F5F5;
+            --gray: #888;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .blog-post-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .blog-post-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .blog-post-date {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .blog-post-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .blog-post-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .blog-post-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--gray);
+            animation: fadeInUp 1s ease;
+            animation-fill-mode: both;
+        }
+        
+        .blog-post-content p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .blog-post-content p:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .blog-post-content p:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .blog-post-content h2 {
+            font-size: 28px;
+            margin: 30px 0 20px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        
+        .blog-post-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .blog-post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease 1s both;
+        }
+        
+        .blog-post-tag {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post-tag:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .blog-post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .blog-post-nav-btn {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .blog-post-nav-btn:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 77, 77, 0.2);
+        }
+        
+        .blog-post-nav-btn i {
+            margin: 0 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-post-title {
+                font-size: 32px;
+            }
+            
+            .blog-post-image {
+                height: 300px;
+            }
+            
+            .blog-post-content {
+                padding: 30px;
+            }
+            
+            .blog-post-navigation {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-post-container">
+        <div class="blog-post-header">
+            <span class="blog-post-date">02 May, 2025</span>
+            <h1 class="blog-post-title">A Great Journey</h1>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Journey" class="blog-post-image">
+        
+        <div class="blog-post-content">
+            <p>Life is a journey filled with lessons, adventures, and unforgettable moments. Each step we take brings new experiences and opportunities for growth. From the highest peaks to the lowest valleys, every part of the journey shapes who we are and who we become.</p>
+            
+            <p>In my own journey as a developer and designer, I've encountered countless challenges and triumphs. There were moments of frustration when code wouldn't work as expected, and moments of pure joy when a project finally came together. These experiences have taught me patience, perseverance, and the value of continuous learning.</p>
+            
+            <h2>The Path of Growth</h2>
+            
+            <p>What makes the journey truly great isn't just the destination, but the transformation that happens along the way. I remember my first website - simple, static, and far from perfect. But it was a start, a first step on this incredible path of digital creation.</p>
+            
+            <p>As I progressed, I discovered the power of combining technical skills with creative vision. The moment I realized I could not only build functional websites but also make them visually stunning was a turning point in my career. This intersection of logic and artistry is where I found my true passion.</p>
+            
+            <h2>Lessons Learned</h2>
+            
+            <p>The most valuable lessons often come from failures. That client project that didn't go as planned, the design that didn't resonate with users, the code that broke at the worst possible moment - each of these taught me something invaluable.</p>
+            
+            <p>Through these experiences, I've developed a process that emphasizes planning, testing, and iteration. I've learned that great work isn't about being perfect the first time, but about being willing to refine and improve until the result truly serves its purpose.</p>
+            
+            <div class="blog-post-tags">
+                <span class="blog-post-tag">Personal Growth</span>
+                <span class="blog-post-tag">Career Journey</span>
+                <span class="blog-post-tag">Web Development</span>
+                <span class="blog-post-tag">Design Thinking</span>
+            </div>
+        </div>
+        
+        <div class="blog-post-navigation">
+            <a href="blog1.html" class="blog-post-nav-btn"><i class="fas fa-arrow-left"></i> Previous Post</a>
+            <a href="blog1.html" class="blog-post-nav-btn">Next Post <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</body>
+</html>

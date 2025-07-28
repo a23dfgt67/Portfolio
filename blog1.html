@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Work! - Sohail's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4D4D;
+            --secondary: #F9CB28;
+            --dark: #1E1E1E;
+            --light: #F5F5F5;
+            --gray: #888;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .blog-post-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .blog-post-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .blog-post-date {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .blog-post-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .blog-post-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .blog-post-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--gray);
+            animation: fadeInUp 1s ease;
+            animation-fill-mode: both;
+        }
+        
+        .blog-post-content p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .blog-post-content p:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .blog-post-content p:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .blog-post-content h2 {
+            font-size: 28px;
+            margin: 30px 0 20px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        
+        .blog-post-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .work-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 250px;
+        }
+        
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .work-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .work-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .work-item:hover .work-caption {
+            opacity: 1;
+        }
+        
+        .blog-post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease 1s both;
+        }
+        
+        .blog-post-tag {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post-tag:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .blog-post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .blog-post-nav-btn {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .blog-post-nav-btn:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 77, 77, 0.2);
+        }
+        
+        .blog-post-nav-btn i {
+            margin: 0 10px;
+        }
+        
+        .quote-box {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 120px;
+            font-family: serif;
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .quote-box p {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-post-title {
+                font-size: 32px;
+            }
+            
+            .blog-post-image {
+                height: 300px;
+            }
+            
+            .blog-post-content {
+                padding: 30px;
+            }
+            
+            .work-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-post-navigation {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-post-container">
+        <div class="blog-post-header">
+            <span class="blog-post-date">02 May, 2030</span>
+            <h1 class="blog-post-title">Awesome Work!</h1>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1470&q=80" alt="Coding Workspace" class="blog-post-image">
+        
+        <div class="blog-post-content">
+            <p>From ideas to execution — here's where awesome work comes to life. In my journey as a full-stack developer and designer, I've had the privilege of working on projects that push boundaries and inspire progress. Each project represents not just technical skill, but creative problem-solving and attention to detail.</p>
+            
+            <p>What makes work truly awesome isn't just the final product, but the process behind it. The late-night coding sessions, the design iterations, the "aha" moments when everything clicks into place. These are the experiences that transform good work into something extraordinary.</p>
+            
+            <div class="quote-box">
+                <p>"Quality is never an accident; it is always the result of intelligent effort."</p>
+                <div class="quote-author">— John Ruskin</div>
+            </div>
+            
+            <h2>Project Highlights</h2>
+            
+            <p>Here are some examples of projects that embody this philosophy of awesome work:</p>
+            
+            <div class="work-gallery">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Project">
+                    <div class="work-caption">
+                        <h3>E-commerce Platform</h3>
+                        <p>React, Node.js, MongoDB</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Portfolio Design">
+                    <div class="work-caption">
+                        <h3>Portfolio Design</h3>
+                        <p>UI/UX, Figma, CSS Animations</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Mobile App UI">
+                    <div class="work-caption">
+                        <h3>Mobile App UI</h3>
+                        <p>Figma, Adobe XD Prototyping</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital Marketing">
+                    <div class="work-caption">
+                        <h3>Marketing Dashboard</h3>
+                        <p>Google Analytics, Data Visualization</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>The Process Behind the Work</h2>
+            
+            <p>Awesome work doesn't happen by accident. My process typically involves these key stages:</p>
+            
+            <p><strong>1. Discovery:</strong> Understanding the problem space and user needs through research and analysis.</p>
+            <p><strong>2. Ideation:</strong> Brainstorming multiple solutions and creating prototypes.</p>
+            <p><strong>3. Execution:</strong> Bringing the chosen solution to life with clean code and thoughtful design.</p>
+            <p><strong>4. Refinement:</strong> Testing, gathering feedback, and iterating to perfection.</p>
+            
+            <div class="blog-post-tags">
+                <span class="blog-post-tag">Web Development</span>
+                <span class="blog-post-tag">UI/UX Design</span>
+                <span class="blog-post-tag">Project Management</span>
+                <span class="blog-post-tag">Creative Process</span>
+            </div>
+        </div>
+        
+        <div class="blog-post-navigation">
+            <a href="blog.html" class="blog-post-nav-btn"><i class="fas fa-arrow-left"></i> Previous Post</a>
+            <a href="blog.html" class="blog-post-nav-btn">Next Post <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</body>
+</html>
