@@ -70,20 +70,48 @@
 const form = document.querySelector('form');
 const submitBtn = document.querySelector('.submit-btn');
 
-// Optional: Create a success message element
+// Success message element
 const successMessage = document.createElement('p');
 successMessage.textContent = "✅ Message sent successfully!";
 successMessage.style.color = "green";
 successMessage.style.marginTop = "15px";
-successMessage.style.display = "none"; // hidden initially
+successMessage.style.display = "none";
 form.appendChild(successMessage);
 
-// Intercept form submission
 form.addEventListener('submit', function (e) {
-    // Show loading state
+    e.preventDefault(); // Stop default form submission
+
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            successMessage.style.display = "block";
+            form.reset();
+        } else {
+            successMessage.textContent = "❌ Failed to send message.";
+            successMessage.style.color = "red";
+            successMessage.style.display = "block";
+        }
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+    }).catch(error => {
+        successMessage.textContent = "❌ Error occurred.";
+        successMessage.style.color = "red";
+        successMessage.style.display = "block";
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+    });
 });
+
 
 // Expertise section animation
 const expertiseObserver = new IntersectionObserver((entries) => {
