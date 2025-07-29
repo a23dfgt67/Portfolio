@@ -1030,8 +1030,8 @@
             }
             
             .hero-social {
-                position: relative;
-                top: 450px;
+                 margin-top: 30px;
+                margin-bottom: 50px;
             }
             
             .social-icons {
@@ -1121,10 +1121,7 @@
                 flex-direction: column;
                 gap: 15px;
             }
-            .hero-social {
-                position: relative;
-                top: 400px;
-            }
+           
             .btn {
                 width: 100%;
                 text-align: center;
