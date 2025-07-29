@@ -1041,7 +1041,7 @@
             .hero-image {
                 position: relative;
                 right: auto;
-                top: auto;
+                top: 200px;
                 transform: none;
                 margin-top: 50px;
             }
