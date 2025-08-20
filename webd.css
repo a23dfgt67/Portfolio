@@ -1218,9 +1218,10 @@
   .portfolio-overlay a {
     font-size: 10px;
   }
-   .portfolio-overlay h3 {
-    font-size: 10px;
-  }
+.portfolio-item:first-child .portfolio-overlay h3 {
+     
+  font-size: 10px; 
+}
 }
 @media (min-width: 560px) and (max-width: 600px) {
   .portfolio-overlay {
