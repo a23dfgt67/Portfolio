@@ -1207,17 +1207,16 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* Mobile screens only */
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .portfolio-overlay {
-    font-size: 14px; /* chhote mobile par text thoda adjust karna */
-    padding: 10px;
+    font-size: 10px; /* chhote mobile par text thoda adjust karna */
+    padding: 6px;
   }
   .portfolio-tags{
-    font-size: 14px;
+    font-size: 10px;
   }
   .portfolio-overlay a {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 @media (min-width: 560px) and (max-width: 600px) {
@@ -1232,10 +1231,10 @@
     opacity: 1;
   }
   .portfolio-tags{
-    font-size: 14px;
+    font-size: 10px;
   }
   .portfolio-overlay a {
-    font-size: 14px;
+    font-size: 10px;
   }
   .portfolio-overlay h3,
   .portfolio-overlay p,
