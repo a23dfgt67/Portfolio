@@ -1490,136 +1490,166 @@
             }
         }
         
-        /* Responsive */
-        @media (max-width: 1200px) {
-            nav,
-            .hero,
-            .section {
-                padding: 20px 50px;
-            }
-            
-        
-          
-        }
-        
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 150px;
-                padding-bottom: 100px;
-            }
-       
-            .hero-content {
-                max-width: 100%;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-            }
-            
-            .hero-social {
-                margin-top: 50px;
-                margin-bottom: 50px;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-    
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-wrap: wrap;
-            }
-            
-            .footer-col {
-                flex: 0 0 50%;
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 30px;
-                overflow: hidden;
-            }
-            
-            nav.scrolled {
-                padding: 10px 30px;
-            }
-            .Logo{
-                height: 120px;
-            }
-            .menu-btn {
-                display: block;
-                cursor: pointer;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s ease;
-                z-index: 999;
-            }
-            
-            nav ul.active {
-                left: 0;
-            }
-            nav ul li a {
-            color: black !important;  /* ✅ force link color to be visible */
-            }
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .section {
-                padding: 80px 30px;
-            }
-            
-            .portfolio-container,
-            .blog-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-col {
-                flex: 0 0 100%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 40px;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-              
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-          
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
+          /* Reset to prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    nav,
+    .hero,
+    .section {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 20px 80px 20px; /* top-bottom balanced */
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .hero-social {
+        margin: 40px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        flex: 0 0 50%;
+        margin-bottom: 25px;
+    }
+
+    /* Hero Image Responsive Fix */
+    .hero-image {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        max-width: 350px; /* adjust for tablets */
+        height: auto;
+        margin: 30px auto 0;
+    }
+
+    .hero-image img {
+        transform: none;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 25px;
+        overflow: visible; /* hidden hatao */
+    }
+
+    nav.scrolled {
+        padding: 10px 25px;
+    }
+
+    .Logo {
+        height: 90px;
+    }
+
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* button sabse upar rahe */
+    }
+
+    nav ul {
+        position: fixed;
+        top: 100px;              /* 👈 ab puri screen cover karega */
+        left: -100%;
+        width: 100%;
+        height: 100vh;       /* 👈 full screen */
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 1000;       /* content ke upar rahe */
+    }
+
+    nav ul.active {
+        left: 0; /* 👈 show hone par puri screen pe visible */
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: black !important;
+    }
+
+    .section {
+        padding: 60px 25px;
+    }
+
+    .portfolio-container,
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        flex: 0 0 100%;
+    }
+
+    /* Hero Image smaller for mobile */
+    .hero-image {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero Image tiny fix */
+    .hero-image {
+        max-width: 400px;
+    }
+}
+
       .contact-text a {
          text-decoration:none;
          color:black;
@@ -1912,15 +1942,4 @@
         height: 220px;
     }
 }
-    @media (max-width: 768px) {
-             .hero {
-                padding: 0 20px;
-                    }
 
-              .hero-image {
-                  right: 0;
-                  width: 280px;
-                  height: 280px;
-                 }
-
-            }
