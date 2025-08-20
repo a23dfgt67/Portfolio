@@ -1912,3 +1912,15 @@
         height: 220px;
     }
 }
+    @media (max-width: 768px) {
+             .hero {
+                padding: 0 20px;
+                    }
+
+              .hero-image {
+                  right: 0;
+                  width: 280px;
+                  height: 280px;
+                 }
+
+            }
