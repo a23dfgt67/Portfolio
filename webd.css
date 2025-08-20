@@ -1546,7 +1546,7 @@
         @media (max-width: 768px) {
             nav {
                 padding: 15px 30px;
-                overflow: visible;
+                overflow: hidden;
             }
             
             nav.scrolled {
