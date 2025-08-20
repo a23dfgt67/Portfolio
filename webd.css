@@ -1207,6 +1207,32 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Mobile screens only */
+@media (max-width: 480px) {
+  .portfolio-overlay {
+    font-size: 14px; /* chhote mobile par text thoda adjust karna */
+    padding: 10px;
+  }
+}
+@media (min-width: 560px) and (max-width: 600px) {
+  .portfolio-overlay {
+    opacity: 0;
+    transform: none;
+    padding: 15px;
+    transition: opacity 0.4s ease;
+  }
+
+  .portfolio-item.active .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .portfolio-overlay h3,
+  .portfolio-overlay p,
+  .portfolio-overlay a {
+    transform: none !important;
+  }
+}
+
         /* Blog Section */
         .blog {
             background: #F9F9F9;
