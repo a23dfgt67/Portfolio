@@ -1213,6 +1213,12 @@
     font-size: 14px; /* chhote mobile par text thoda adjust karna */
     padding: 10px;
   }
+  .portfolio-tags{
+    font-size: 14px;
+  }
+  .portfolio-overlay a {
+    font-size: 14px;
+  }
 }
 @media (min-width: 560px) and (max-width: 600px) {
   .portfolio-overlay {
@@ -1225,7 +1231,12 @@
   .portfolio-item.active .portfolio-overlay {
     opacity: 1;
   }
-
+  .portfolio-tags{
+    font-size: 14px;
+  }
+  .portfolio-overlay a {
+    font-size: 14px;
+  }
   .portfolio-overlay h3,
   .portfolio-overlay p,
   .portfolio-overlay a {
