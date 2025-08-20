@@ -9,16 +9,43 @@
     <link rel="stylesheet" href="webd.css">
 </head>
 <body>
+
+        <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/923293365393" target="_blank">
+        <div class="button">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="popup">
+            <p>Chat with us</p>
+            
+        </div>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+   <div class="backtotop-button" id="backToTopBtn">
+    <div class="button">
+      ⬆
+    </div>
+    <div class="popup">
+        <p>Back to Top</p>
+    </div>
+    </div>
+
+    
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#" class="logo">Sohail<span>.</span></a>
+         <img src="logo.png" alt="Sohail Logo" class="Logo">
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
+            
         </ul>
         <div class="menu-btn" >
             <i class="fas fa-bars"></i>
@@ -26,9 +53,17 @@
     </nav>
 
     <!-- Hero Section -->
+  <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="floating-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        
         <div class="hero-content">
-            <h4>Graphic and Web Developer</h4>
+        
             <h1><span>Hello, I'm</span> Sohail Abbas</h1>
             <p>Motivated and detail-oriented Web Developer with a passion for creating seamless and visually appealing websites. Adept at collaborating with cross-functional teams to deliver high-quality projects on time.</p>
             <div class="hero-btns">
@@ -42,15 +77,13 @@
                     <a href="https://www.tiktok.com/@coderhub5?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="https://www.instagram.com/coder_6508?igsh=MXMzNW1wcHR1ZmRmdQ==" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.youtube.com/channel/UCUMYSfji1ITtgZwnn1K8peA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                   
                 </div>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sohail Abbas">
+        <div class="hero-image" >
+            <img src="side.png" alt="Sohail Abbas">
         </div>
     </section>
-
     <!-- About Section -->
     <section class="section" id="about">
         <div class="section-title">
@@ -59,7 +92,7 @@
         </div>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sohail Abbas">
+                <img src="sohail.jpeg" alt="Sohail Abbas">
             </div>
             <div class="about-text">
                 <h3>HELLO, MY NAME IS <span>Sohail Abbas</span></h3>
@@ -118,6 +151,43 @@
             </div>
         </div>
     </section>
+    <!-- 3D Gallery Section -->
+<section class="section" id="gallery">
+    <div class="section-title">
+        <h2>My Work Gallery</h2>
+        <p>Interactive 3D Showcase</p>
+        <p>Click on image to view details or hover.</p>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="gallery-track" id="galleryTrack">
+            <!-- Images will be added dynamically -->
+        </div>
+        <div class="preview-panel" id="previewPanel">
+            <img class="preview-img" id="previewImg" src="" alt="">
+            <div class="preview-info">
+                <h2 class="preview-title" id="previewTitle"></h2>
+                <p class="preview-desc" id="previewDesc"></p>
+            </div>
+        </div>
+        <!-- Click Preview Modal -->
+        <div class="modal" id="modal">
+           <div class="modal-content">
+           <div class="close-btn" id="closeBtn"></div>
+           <img class="modal-img" id="modalImg" src="" alt="">
+             <div class="modal-info">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-desc" id="modalDesc"></p>
+          </div>
+          </div>
+        </div>                              
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-primary" id="pauseBtn" style="border: none;">Pause Rotation</button>
+        <button class="btn btn-outline" id="resumeBtn">Resume Rotation</button>
+    </div>
+</section>
 <!-- Expertise Section -->
 <section class="section expertise" id="expertise">
     <div class="section-title">
@@ -213,39 +283,163 @@
 </section>
 
     <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
-        <div class="section-title">
-            <h2>Portfolio</h2>
-            <p>Awesome Works</p>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="portfolio-img">
+        <section class="section" id="portfolio">
+            <div class="section-title">
+                <h2>Creative Portfolio</h2>
+                <p>Showcasing My Exceptional Work</p>
+            </div>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1470&q=80" alt="E-commerce Website" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Website</h3>
+                        <p>Fully responsive online store with payment integration</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React JS</span>
+                            <span class="portfolio-tag">Node.js</span>
+                            <span class="portfolio-tag">MongoDB</span>
+                        </div>
+                        <a href="#" onclick="showProject('project1')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Portfolio Design" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Portfolio Design</h3>
+                        <p>Modern and minimal portfolio with smooth animations</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">HTML</span>
+                            <span class="portfolio-tag">CSS</span>
+                            <span class="portfolio-tag">JavaScript</span>
+                        </div>
+                        <a href="#" onclick="showProject('project2')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Mobile App UI" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Mobile App UI</h3>
+                        <p>User-friendly interface with intuitive navigation</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Figma</span>
+                            <span class="portfolio-tag">Adobe XD</span>
+                            <span class="portfolio-tag">UI/UX</span>
+                        </div>
+                        <a href="#" onclick="showProject('project3')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="portfolio-overlay">
-                    <h3>E-commerce Website</h3>
-                    <p>React JS, Node.js, MongoDB</p>
-                    <a href="#"><i class="fas fa-link"></i></a>
+        <!-- Project Detail Pages -->
+        <div id="project1" class="project-detail">
+            <div class="project-header">
+                <h2>E-commerce Website</h2>
+                <p>A fully responsive online store with secure payment integration and modern UI</p>
+            </div>
+            
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1470&q=80" alt="E-commerce Overview">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1470&q=80" alt="E-commerce Products">
+                <img src="chash.png" alt="E-commerce Checkout">
+            </div>
+            
+            <div class="project-info">
+                <div class="project-description">
+                    <h3>Project Description</h3>
+                    <p>This e-commerce platform was built with a modern tech stack to provide users with a seamless shopping experience. The website includes product catalogs, user authentication, shopping cart, and secure checkout process.</p>
+                    <p>The platform handles thousands of products and users simultaneously while maintaining fast load times and smooth performance across all devices.</p>
+                </div>
+                
+                <div class="project-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Responsive design that works on all devices</li>
+                        <li>User authentication and profile management</li>
+                        <li>Product search and filtering system</li>
+                        <li>Shopping cart and wishlist functionality</li>
+                        <li>Secure payment processing with Stripe integration</li>
+                        <li>Order tracking and history</li>
+                        <li>Admin dashboard for product management</li>
+                    </ul>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 2" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>Portfolio Design</h3>
-                    <p>HTML, CSS, JavaScript</p>
-                    <a href="#"><i class="fas fa-link"></i></a>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>Mobile App UI</h3>
-                    <p>Figma, Adobe XD</p>
-                    <a href="#"><i class="fas fa-link"></i></a>
-                </div>
-            </div>
+            
+            <button class="back-button" onclick="hideProject('project1')">Back to Portfolio</button>
         </div>
-    </section>
+        
+        <div id="project2" class="project-detail">
+            <div class="project-header">
+                <h2>Portfolio Design</h2>
+                <p>A modern and minimal portfolio website with smooth animations and interactive elements</p>
+            </div>
+            
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Portfolio Overview">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1470&q=80" alt="Portfolio Design">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1470&q=80" alt="Portfolio Responsive">
+            </div>
+            
+            <div class="project-info">
+                <div class="project-description">
+                    <h3>Project Description</h3>
+                    <p>This portfolio design focuses on minimalism and user experience. The clean layout and smooth animations create an engaging experience for visitors while showcasing work effectively.</p>
+                    <p>The design system includes a consistent color palette, typography hierarchy, and interactive elements that provide feedback to user actions.</p>
+                </div>
+                
+                <div class="project-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Modern and clean design aesthetic</li>
+                        <li>Smooth CSS animations and transitions</li>
+                        <li>Fully responsive across all screen sizes</li>
+                        <li>Interactive project gallery with hover effects</li>
+                        <li>Optimized for fast loading times</li>
+                        <li>SEO-friendly structure</li>
+                        <li>Contact form with validation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="back-button" onclick="hideProject('project2')">Back to Portfolio</button>
+        </div>
+        
+        <div id="project3" class="project-detail">
+            <div class="project-header">
+                <h2>Mobile App UI</h2>
+                <p>User-friendly mobile application interface with intuitive navigation and modern design</p>
+            </div>
+            
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80" alt="App Overview">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80" alt="App Screens">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80" alt="App Features">
+            </div>
+            
+            <div class="project-info">
+                <div class="project-description">
+                    <h3>Project Description</h3>
+                    <p>This mobile application UI was designed with a focus on user experience and accessibility. The interface includes intuitive navigation patterns, consistent design language, and thoughtful micro-interactions.</p>
+                    <p>The design process involved user research, wireframing, prototyping, and usability testing to create an interface that meets user needs effectively.</p>
+                </div>
+                
+                <div class="project-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Intuitive and user-friendly navigation</li>
+                        <li>Consistent design system with reusable components</li>
+                        <li>Accessibility features for diverse users</li>
+                        <li>Micro-interactions and meaningful animations</li>
+                        <li>Dark mode and light mode options</li>
+                        <li>Custom iconography and illustrations</li>
+                        <li>Prototypes with interactive elements</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="back-button" onclick="hideProject('project3')">Back to Portfolio</button>
+        </div>
+    </div>
 
     <!-- Blog Section -->
     <section class="section blog" id="blog">
@@ -260,7 +454,7 @@
                     <span class="blog-date">02 May, 2025</span>
                     <h3>A Great Journey</h3>
                     <p>Life is a journey filled with lessons, adventures, and unforgettable moments. Join me as I share the highs, lows, and everything in between on this great journey.</p>
-                     <a href="blog.html" target="_blank"class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="blog.html"  target="_blank" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
@@ -290,9 +484,9 @@
                     </div>
                     <div class="contact-text">
                         <h3>Email</h3>
-                       <p>
-                       <a href="mailto:king99maker88@gmail.com">king99maker88@gmail.com</a>
-                       </p>
+                        <p>
+                      <a href="mailto:king99maker88@gmail.com">king99maker88@gmail.com</a>
+                        </p>
 
                     </div>
                 </div>
@@ -302,11 +496,12 @@
                     </div>
                     <div class="contact-text">
                         <h3>Phone</h3>
-                        <p>
-                        <a href="https://wa.me/923293365393" target="_blank">
-                          +92 0329 3365393
-                          </a>
+                       <p>
+                     <a href="https://wa.me/923293865393" target="_blank">
+                     +92 0329 3865393
+                      </a>
                      </p>
+
                     </div>
                 </div>
                 <div class="contact-card">
@@ -320,7 +515,8 @@
                 </div>
             </div>
             <div class="contact-form">
-              <form action="https://formsubmit.co/king99maker88@gmail.com" method="POST" >
+                <form action="https://formsubmit.co/king99maker88@gmail.com" method="POST" >
+
                     <div class="form-group">
                         <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
                     </div>
@@ -367,10 +563,10 @@
             <div class="footer-col">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                    <li><a href="#">Database Management</a></li>
+                    <li><a href="#expertise">Web Development</a></li>
+                    <li><a href="#expertise">UI/UX Design</a></li>
+                    <li><a href="#expertise">Graphic Design</a></li>
+                    <li><a href="#expertise">Database Management</a></li>
                 </ul>
             </div>
         </div>
